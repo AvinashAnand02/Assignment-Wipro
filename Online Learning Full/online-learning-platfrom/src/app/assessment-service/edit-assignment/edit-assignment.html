@@ -1,0 +1,26 @@
+<div class="edit-assignment-container">
+  <h2>Edit Assignment</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label">Title</label>
+      <input type="text" class="form-control" formControlName="title" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Type</label>
+      <input type="text" class="form-control" formControlName="type" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Due Date</label>
+      <input type="date" class="form-control" formControlName="dueDate" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Passing Criteria</label>
+      <input type="text" class="form-control" formControlName="passingCriteria" />
+    </div>
+
+    <div class="button-row">
+      <button type="submit" class="btn update-btn" [disabled]="form.invalid">Update</button>
+      <a href="/assessments/" class="btn cancel-btn">Cancel</a>
+    </div>
+  </form>
+</div>

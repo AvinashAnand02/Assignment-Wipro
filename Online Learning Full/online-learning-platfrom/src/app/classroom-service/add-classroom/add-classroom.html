@@ -1,0 +1,25 @@
+<div class="add-classroom-container">
+  <h1>Add Classroom</h1>
+  <form (ngSubmit)="onSubmit()">
+    <label for="title">Enter Classroom Title</label>
+    <input type="text" name="title" id="title" placeholder="Enter classroom title" [(ngModel)]="classroom.title">
+
+    <label for="instructor">Enter Classroom Instructor</label>
+    <input type="text" name="instructor" id="instructor" placeholder="Enter instructor name" [(ngModel)]="classroom.instructor">
+
+    <label for="duration">Enter Classroom Duration</label>
+    <input type="number" name="duration" id="duration" placeholder="Enter duration in hours" [(ngModel)]="classroom.duration">
+
+    <div class="button-row">
+      <button type="submit" class="btn submit-btn">Add Classroom</button>
+      <button type="reset" class="btn reset-btn">Reset</button>
+    </div>
+  </form>
+
+  <p class="message">{{ message }}</p>
+
+  <div class="links">
+    <a class="btn back-classroom" href="/classroom">Back to Classroom Menu</a>
+    <a class="btn back-main" href="/">Back To Main Menu</a>
+  </div>
+</div>

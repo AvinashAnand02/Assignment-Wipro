@@ -1,0 +1,28 @@
+<div class="add-course-container">
+  <h1>Add Course</h1>
+  <form (ngSubmit)="onSubmit()">
+    <label for="title">Enter Title</label>
+    <input type="text" name="title" id="title" placeholder="Enter title" [(ngModel)]="course.title">
+
+    <label for="description">Enter Description</label>
+    <textarea name="description" id="description" placeholder="Enter description" [(ngModel)]="course.description"></textarea>
+
+    <label for="duration">Enter Duration</label>
+    <input type="text" name="duration" id="duration" placeholder="Enter duration" [(ngModel)]="course.duration">
+
+    <label for="createdAt">Enter CreatedAt</label>
+    <input type="datetime-local" name="createdAt" id="createdAt" [(ngModel)]="course.createdAt">
+
+    <div class="button-row">
+      <button type="submit" class="btn submit-btn">Add Course</button>
+      <button type="reset" class="btn reset-btn">Reset</button>
+    </div>
+  </form>
+
+  <p class="message">{{ message }}</p>
+
+  <div class="links">
+    <a class="btn back-course" href="/course">Back to Course Menu</a>
+    <a class="btn back-main" href="/">Back To Main Menu</a>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="wholecontent">
+  <h2>All Courses</h2>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div>
+    Total courses: {{ courses.length }}
+  </div>
+
+  <div *ngIf="!courses.length && !errorMessage" class="loading">
+    Loading...
+  </div>
+
+  <div *ngIf="courses.length > 0" class="courses-card">
+    <div class="courses-header">
+      <div>Id</div>
+      <div>Title</div>
+      <div>Description</div>
+      <div>Duration</div>
+      <div>Created At</div>
+      <div>Actions</div>
+    </div>
+
+    <div *ngFor="let course of courses" class="course-row">
+      <div>{{ course.id }}</div>
+      <div>{{ course.title }}</div>
+      <div>{{ course.description }}</div>
+      <div>{{ course.duration }}</div>
+      <div>{{ course.createdAt }}</div>
+      <div class="action">
+        <button class="GreenBtn" (click)="editCourse(course.id)">Edit</button>
+        <button class="RedBtn" (click)="deleteCourse(course.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <a class="btn add-course" href="/add-course">Add Course</a>
+    <a class="btn back-main" href="/">Back To Main Menu</a>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="add-assignment-container">
+  <h1>Add Assignment</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label for="title">Title</label>
+    <input type="text" id="title" formControlName="title" placeholder="Assignment title" />
+
+    <label for="type">Type</label>
+    <input type="text" id="type" formControlName="type" placeholder="Quiz / Project" />
+
+    <label for="dueDate">Due Date</label>
+    <input type="date" id="dueDate" formControlName="dueDate" />
+
+    <label for="passingCriteria">Passing Criteria</label>
+    <input type="text" id="passingCriteria" formControlName="passingCriteria" placeholder="e.g. 50%" />
+
+    <div class="button-row">
+      <button type="submit" class="btn submit-btn" [disabled]="form.invalid">Save</button>
+      <a class="btn cancel-btn" routerLink="/assessments">Cancel</a>
+    </div>
+  </form>
+</div>

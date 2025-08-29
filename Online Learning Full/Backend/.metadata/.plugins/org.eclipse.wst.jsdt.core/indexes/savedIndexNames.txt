@@ -1,0 +1,12 @@
+INDEX VERSION 1.4+C:\Users\BRIJENDRA SINGH\WiproTraining\Microservices\Online-learning_platform\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4068922456.index
+3644857983.index
+3814266227.index
+3392093733.index
+2767986397.index
+1661590454.index
+2738529941.index
+3693709918.index
+2355626503.index
+2793823382.index
+782116897.index

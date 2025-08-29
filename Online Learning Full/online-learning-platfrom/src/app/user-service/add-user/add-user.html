@@ -1,0 +1,28 @@
+<div class="add-user-container">
+  <h1>Add User</h1>
+  <form (ngSubmit)="onSubmit()">
+    <label for="name">Enter Your Name</label>
+    <input type="text" name="name" id="name" placeholder="Enter your name" [(ngModel)]="user.name">
+
+    <label for="email">Enter Your Email</label>
+    <input type="email" name="email" id="email" placeholder="Enter your email" [(ngModel)]="user.email">
+
+    <label for="password">Enter Your Password</label>
+    <input type="password" name="password" id="password" placeholder="Enter your password" [(ngModel)]="user.password">
+
+    <label for="role">Enter Your Role</label>
+    <input type="text" name="role" id="role" placeholder="Enter your role" [(ngModel)]="user.role">
+
+    <div class="button-row">
+      <button type="submit" class="btn submit-btn">Add User</button>
+      <button type="reset" class="btn reset-btn">Reset</button>
+    </div>
+  </form>
+
+  <p class="message">{{ message }}</p>
+
+  <div class="links">
+    <a class="btn back-user" href="/user">Back to User Menu</a>
+    <a class="btn back-main" href="/">Back To Main Menu</a>
+  </div>
+</div>

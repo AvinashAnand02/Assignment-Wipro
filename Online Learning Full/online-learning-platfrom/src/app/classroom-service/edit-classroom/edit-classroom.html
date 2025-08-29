@@ -1,0 +1,23 @@
+<div class="edit-classroom-container">
+  <h1>Edit Classroom</h1>
+  <form (ngSubmit)="onSubmit()">
+    <label for="title">Enter Title</label>
+    <input type="text" name="title" id="title" placeholder="Enter classroom title" [(ngModel)]="classroom.title">
+
+    <label for="instructor">Enter Instructor</label>
+    <input type="text" name="instructor" id="instructor" placeholder="Enter instructor name" [(ngModel)]="classroom.instructor">
+
+    <label for="duration">Enter Duration</label>
+    <input type="number" name="duration" id="duration" placeholder="Enter duration in hours" [(ngModel)]="classroom.duration">
+
+    <div class="button-row">
+      <button type="submit" class="btn submit-btn">Update Classroom</button>
+      <button type="reset" class="btn reset-btn">Reset</button>
+    </div>
+  </form>
+
+  <div class="links">
+    <a class="btn back-classroom" href="/classroom">Back to Classroom Menu</a>
+    <a class="btn back-main" href="/">Back To Main Menu</a>
+  </div>
+</div>

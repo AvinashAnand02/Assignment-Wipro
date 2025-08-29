@@ -1,0 +1,41 @@
+<div class="wholeBody">
+  <h2>All Classrooms</h2>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div>Total classrooms: {{ classrooms.length }}</div>
+
+  <div *ngIf="!classrooms.length && !errorMessage" class="loading">
+    Loading...
+  </div>
+
+  <input type="text" placeholder="Search..." [(ngModel)]="message" (change)="onChange()" class="search-box"/>
+
+  <div *ngIf="classrooms.length > 0" class="classroom-card">
+    <div class="classroom-header">
+      <div>ID</div>
+      <div>Title</div>
+      <div>Instructor</div>
+      <div>Duration</div>
+      <div>Actions</div>
+    </div>
+
+    <div *ngFor="let classroom of classrooms" class="classroom-row">
+      <div>{{ classroom.id }}</div>
+      <div>{{ classroom.title }}</div>
+      <div>{{ classroom.instructor }}</div>
+      <div>{{ classroom.duration }}</div>
+      <div class="actions">
+        <button class="GreenBtn" (click)="editClassroom(classroom.id)">Edit</button>
+        <button class="RedBtn" (click)="deleteClassroom(classroom.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <a class="btn add-classroom" href="/add-classroom">Add Classroom</a>
+    <a class="btn back-main" href="/">Back To Main Menu</a>
+  </div>
+</div>

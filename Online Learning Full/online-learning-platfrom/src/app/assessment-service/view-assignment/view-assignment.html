@@ -1,0 +1,35 @@
+<div class="wholeBody">
+  <h2>Assignments</h2>
+
+  <div *ngIf="assignments.length > 0" class="assignments-card">
+    <div class="assignments-header">
+      <div>ID</div>
+      <div>Title</div>
+      <div>Type</div>
+      <div>Due Date</div>
+      <div>Passing Criteria</div>
+      <div>Actions</div>
+    </div>
+
+    <div *ngFor="let a of assignments" class="assignment-row">
+      <div>{{ a.id }}</div>
+      <div>{{ a.title }}</div>
+      <div>{{ a.type }}</div>
+      <div>{{ a.dueDate }}</div>
+      <div>{{ a.passingCriteria }}</div>
+      <div class="actions">
+        <a [routerLink]="['/assessments/edit', a.id]" class="btn edit-btn">Edit</a>
+        <button (click)="deleteAssignment(a.id)" class="btn delete-btn">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="assignments.length === 0" class="no-assignments">
+    No assignments found..
+  </div>
+
+  <div class="buttons">
+    <a class="btn add-btn" routerLink="/assessments/add">Add Assignment</a>
+    <a class="btn back-main" routerLink="/">Back To Main Menu</a>
+  </div>
+</div>

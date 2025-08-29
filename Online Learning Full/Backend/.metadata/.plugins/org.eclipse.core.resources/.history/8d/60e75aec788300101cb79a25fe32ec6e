@@ -1,0 +1,48 @@
+package com.classroom.classroom_service.controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.classroom.classroom_service.model.Classroom;
+import com.classroom.classroom_service.service.ClassroomService;
+
+@RestController
+@RequestMapping("/api/classrooms")
+@CrossOrigin(origins="*")
+public class ClassroomController {
+
+    private final ClassroomService service;
+
+    public ClassroomController(ClassroomService service) {
+        this.service = service;
+    }
+
+    @PostMapping
+    public Classroom createClassroom(@RequestBody Classroom classroom) {
+        return service.saveClassroom(classroom);
+    }
+
+    @GetMapping
+    public List<Classroom> getAllClassrooms() {
+        return service.getAllClassrooms();
+    }
+
+    @GetMapping("/{id}")
+    public Classroom getClassroom(@PathVariable Long id) {
+        return service.getClassroomById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteClassroom(@PathVariable Long id) {
+        service.deleteClassroom(id);
+        return "Classroom deleted with id: " + id;
+    }
+}

@@ -1,0 +1,43 @@
+<div class="wholeBody">
+  <h2>All Users</h2>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div>
+    Total users: {{ users.length }}
+  </div>
+
+  <div *ngIf="!users.length && !errorMessage" class="loading">
+    Loading...
+  </div>
+
+  <div *ngIf="users.length > 0" class="user-card">
+    <div class="user-header">
+      <div>S.No</div>
+      <div>Name</div>
+      <div>Email</div>
+      <div>Password</div>
+      <div>Role</div>
+      <div>Actions</div>
+    </div>
+
+    <div *ngFor="let user of users" class="user-row">
+      <div>{{ user.id }}</div>
+      <div>{{ user.name }}</div>
+      <div>{{ user.email }}</div>
+      <div>{{ user.password }}</div>
+      <div>{{ user.role }}</div>
+      <div class="actions">
+        <button class="btn edit" (click)="editUser(user.id)">Edit</button>
+        <button class="btn delete" (click)="deleteUser(user.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <a class="btn add-user" href="/add-user">Add User</a>
+    <a class="btn back-menu" href="">Back To Main Menu</a>
+  </div>
+</div>

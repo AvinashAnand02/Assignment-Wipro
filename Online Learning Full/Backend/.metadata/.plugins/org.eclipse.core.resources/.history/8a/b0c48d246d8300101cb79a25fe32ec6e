@@ -1,0 +1,5 @@
+package com.gateway_user.Online_Learning_User.crossConfig;
+
+public class CorsConfig {
+
+}
